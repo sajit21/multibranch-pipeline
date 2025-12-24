@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+
+        stage('Debug Env') {
+            steps {
+                sh 'printenv'
+            }
+        }
         stage('Setup Venv') {
             steps {
                 echo "Building branch: ${env.BRANCH_NAME}"
